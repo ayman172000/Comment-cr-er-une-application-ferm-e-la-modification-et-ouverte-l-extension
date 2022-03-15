@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--pour bean on demande a la JDK de cree un objet de type EXT.DaoImpleV3 avec le nom DAO
+    au demarrage de lapplication
+-->
+    <bean id="DAO" class="EXT.DaoImpleV3"></bean>
+    <!--si vous voulez faire l'injection via un setter-->
+    <!--<bean id="Metier" class="Metier.Metier">
+        <property name="dao" ref="DAO"></property>
+    </bean>-->
+    <!---->
+    <!--si vous voulez faire l'injection via un constructeur-->
+    <bean id="Metier" class="Metier.Metier">
+        <constructor-arg ref="DAO"></constructor-arg>
+    </bean>
+</beans>
+
+
+
